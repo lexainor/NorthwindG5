@@ -1,0 +1,25 @@
+﻿CREATE TABLE [staging].[Products]
+(
+	[ProductSK] [int] NOT NULL,
+	[ProductName] [nvarchar](40) NOT NULL,
+	[QuantityPerUnit] [nvarchar](20) NOT NULL,
+	[UnitPrice] [money] NOT NULL,
+	[UnitsInStock] [smallint] NOT NULL,
+	[UnitsOnOrder] [smallint] NOT NULL,
+	[ReorderLevel] [smallint] NOT NULL,
+	[Discontinued] [bit] NOT NULL,
+	[CategoryName] [nvarchar](15) NOT NULL,
+	[Description] [ntext] NULL,
+	[Picture] [image] NULL,
+	[SupplierCompanyName] [nvarchar](40) NOT NULL,
+	[SupplierContactName] [nvarchar](30),
+	[SupplierContactTitle] [nvarchar](30),
+	[SupplierAddress] [nvarchar](60),
+	[SupplierCity] [nvarchar](15),
+	[SupplierRegion] [nvarchar](15),
+	[SupplierPostalCode] [nvarchar](10),
+	[SupplierCountry] [nvarchar](15),
+	[SupplierPhone] [nvarchar](24),
+	[SupplierFax] [nvarchar](24),
+	[SupplierHomePage] [ntext]
+	)

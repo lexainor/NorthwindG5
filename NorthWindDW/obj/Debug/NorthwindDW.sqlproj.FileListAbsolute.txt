@@ -1,0 +1,6 @@
+C:\Users\Axel Torrico\source\repos\NorthwindDW\NorthwindDW\bin\Debug\NorthwindDW.dacpac
+C:\Users\Axel Torrico\source\repos\NorthwindDW\NorthwindDW\bin\Debug\NorthwindDW.dll
+C:\Users\Axel Torrico\source\repos\NorthwindDW\NorthwindDW\bin\Debug\NorthwindDW.pdb
+C:\Users\Axel Torrico\source\repos\NorthwindDW\NorthwindDW\obj\Debug\NorthwindDW.sqlproj.AssemblyReference.cache
+C:\Users\Axel Torrico\source\repos\NorthwindDW\NorthwindDW\obj\Debug\NorthwindDW.dll
+C:\Users\Axel Torrico\source\repos\NorthwindDW\NorthwindDW\obj\Debug\NorthwindDW.pdb
