@@ -1,0 +1,86 @@
+﻿** Aspectos destacados
+     Tablas que se volverán a crear con los datos migrados
+       Ninguno
+     Índices clúster que se van a quitar
+       Ninguno
+     Índices clúster que se van a crear
+       Ninguno
+     Posibles incidencias de datos
+       Ninguno
+
+** Acciones del usuario
+     Crear
+       [dbo].[Categories] (Tabla)
+       [dbo].[Categories].[CategoryName] (Índice)
+       [dbo].[CustomerCustomerDemo] (Tabla)
+       [dbo].[CustomerDemographics] (Tabla)
+       [dbo].[Customers] (Tabla)
+       [dbo].[Customers].[City] (Índice)
+       [dbo].[Customers].[CompanyName] (Índice)
+       [dbo].[Customers].[PostalCode] (Índice)
+       [dbo].[Customers].[Region] (Índice)
+       [dbo].[Employees] (Tabla)
+       [dbo].[Employees].[LastName] (Índice)
+       [dbo].[Employees].[PostalCode] (Índice)
+       [dbo].[EmployeeTerritories] (Tabla)
+       [dbo].[Order Details] (Tabla)
+       [dbo].[Order Details].[OrderID] (Índice)
+       [dbo].[Order Details].[OrdersOrder_Details] (Índice)
+       [dbo].[Order Details].[ProductID] (Índice)
+       [dbo].[Order Details].[ProductsOrder_Details] (Índice)
+       [dbo].[Orders] (Tabla)
+       [dbo].[Orders].[CustomerID] (Índice)
+       [dbo].[Orders].[CustomersOrders] (Índice)
+       [dbo].[Orders].[EmployeeID] (Índice)
+       [dbo].[Orders].[EmployeesOrders] (Índice)
+       [dbo].[Orders].[OrderDate] (Índice)
+       [dbo].[Orders].[ShippedDate] (Índice)
+       [dbo].[Orders].[ShippersOrders] (Índice)
+       [dbo].[Orders].[ShipPostalCode] (Índice)
+       [dbo].[Products] (Tabla)
+       [dbo].[Products].[CategoriesProducts] (Índice)
+       [dbo].[Products].[CategoryID] (Índice)
+       [dbo].[Products].[ProductName] (Índice)
+       [dbo].[Products].[SupplierID] (Índice)
+       [dbo].[Products].[SuppliersProducts] (Índice)
+       [dbo].[Region] (Tabla)
+       [dbo].[Shippers] (Tabla)
+       [dbo].[Suppliers] (Tabla)
+       [dbo].[Suppliers].[CompanyName] (Índice)
+       [dbo].[Suppliers].[PostalCode] (Índice)
+       [dbo].[Territories] (Tabla)
+       [dbo].[DF_Order_Details_UnitPrice] (Restricción DEFAULT)
+       [dbo].[DF_Order_Details_Quantity] (Restricción DEFAULT)
+       [dbo].[DF_Order_Details_Discount] (Restricción DEFAULT)
+       [dbo].[DF_Orders_Freight] (Restricción DEFAULT)
+       [dbo].[DF_Products_UnitPrice] (Restricción DEFAULT)
+       [dbo].[DF_Products_UnitsInStock] (Restricción DEFAULT)
+       [dbo].[DF_Products_UnitsOnOrder] (Restricción DEFAULT)
+       [dbo].[DF_Products_ReorderLevel] (Restricción DEFAULT)
+       [dbo].[DF_Products_Discontinued] (Restricción DEFAULT)
+       [dbo].[FK_Employees_Employees] (Clave externa)
+       [dbo].[FK_Order_Details_Orders] (Clave externa)
+       [dbo].[FK_Order_Details_Products] (Clave externa)
+       [dbo].[FK_Orders_Customers] (Clave externa)
+       [dbo].[FK_Orders_Employees] (Clave externa)
+       [dbo].[FK_Orders_Shippers] (Clave externa)
+       [dbo].[FK_Products_Categories] (Clave externa)
+       [dbo].[FK_Products_Suppliers] (Clave externa)
+       [dbo].[CK_Birthdate] (Restricción CHECK)
+       [dbo].[CK_Discount] (Restricción CHECK)
+       [dbo].[CK_Quantity] (Restricción CHECK)
+       [dbo].[CK_UnitPrice] (Restricción CHECK)
+       [dbo].[CK_Products_UnitPrice] (Restricción CHECK)
+       [dbo].[CK_ReorderLevel] (Restricción CHECK)
+       [dbo].[CK_UnitsInStock] (Restricción CHECK)
+       [dbo].[CK_UnitsOnOrder] (Restricción CHECK)
+       [dbo].[GetCustomerChangesByRowVersion] (Procedimiento)
+       [dbo].[GetDatabaseRowVersion] (Procedimiento)
+       [dbo].[GetEmployeeChangesByRowVersion] (Procedimiento)
+       [dbo].[GetOrdersChangesByRowVersion] (Procedimiento)
+       [dbo].[GetProductChangesByRowVersion] (Procedimiento)
+
+** Acciones de compatibilidad
+
+Las bases de datos del proyecto y de destino tienen una configuración de intercalación diferente. Se pueden producir errores de implementación.
+

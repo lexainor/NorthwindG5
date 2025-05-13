@@ -4,3 +4,29 @@ C:\Users\Axel Torrico\source\repos\NorthwindDW\NorthwindDW\bin\Debug\NorthwindDW
 C:\Users\Axel Torrico\source\repos\NorthwindDW\NorthwindDW\obj\Debug\NorthwindDW.sqlproj.AssemblyReference.cache
 C:\Users\Axel Torrico\source\repos\NorthwindDW\NorthwindDW\obj\Debug\NorthwindDW.dll
 C:\Users\Axel Torrico\source\repos\NorthwindDW\NorthwindDW\obj\Debug\NorthwindDW.pdb
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindDW\bin\Debug\NorthwindDW.dacpac
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindDW\bin\Debug\NorthwindDW.dll
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindDW\bin\Debug\NorthwindDW.pdb
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindDW\obj\Debug\NorthwindDW.sqlproj.AssemblyReference.cache
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindDW\obj\Debug\Model.xml
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindDW\obj\Debug\refactor.xml
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindDW\obj\Debug\postdeploy.sql
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindDW\obj\Debug\predeploy.sql
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindDW\obj\Debug\NorthwindDW.dll
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindDW\obj\Debug\NorthwindDW.pdb
+C:\Nothwind\NorthwindDW\NorthwindDW\bin\Debug\NorthwindDW.dacpac
+C:\Nothwind\NorthwindDW\NorthwindDW\bin\Debug\NorthwindDW.dll
+C:\Nothwind\NorthwindDW\NorthwindDW\bin\Debug\NorthwindDW.pdb
+C:\Nothwind\NorthwindDW\NorthwindDW\obj\Debug\NorthwindDW.sqlproj.AssemblyReference.cache
+C:\Nothwind\NorthwindDW\NorthwindDW\obj\Debug\NorthwindDW.dll
+C:\Nothwind\NorthwindDW\NorthwindDW\obj\Debug\NorthwindDW.pdb
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindDW\bin\Debug\NorthwindDW.dacpac
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindDW\bin\Debug\NorthwindDW.dll
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindDW\bin\Debug\NorthwindDW.pdb
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindDW\obj\Debug\NorthwindDW.sqlproj.AssemblyReference.cache
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindDW\obj\Debug\NorthwindDW.dll
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindDW\obj\Debug\NorthwindDW.pdb
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindDW\obj\Debug\Model.xml
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindDW\obj\Debug\refactor.xml
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindDW\obj\Debug\postdeploy.sql
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindDW\obj\Debug\predeploy.sql

@@ -1,4 +1,4 @@
-﻿CREATE TABLE [staging].[Products]
+﻿CREATE TABLE [staging].[Product]
 (
 	[ProductSK] [int] NOT NULL,
 	[ProductName] [nvarchar](40) NOT NULL,

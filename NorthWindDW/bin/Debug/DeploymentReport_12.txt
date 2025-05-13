@@ -1,0 +1,34 @@
+﻿** Aspectos destacados
+     Tablas que se volverán a crear con los datos migrados
+       [dbo].[FactOrders]
+     Índices clúster que se van a quitar
+       Ninguno
+     Índices clúster que se van a crear
+       Ninguno
+     Posibles incidencias de datos
+       Ninguno
+
+** Acciones del usuario
+     Volver a crear la tabla
+       [dbo].[FactOrders] (Tabla)
+
+** Acciones de compatibilidad
+     Quitar
+       [dbo].[FK_DimCustomer] (Clave externa)
+       [dbo].[FK_DimProduct] (Clave externa)
+       [dbo].[FK_DimEmployee] (Clave externa)
+       [dbo].[FK_DimDate_OrderDate] (Clave externa)
+       [dbo].[FK_DimDate_RequiredDate] (Clave externa)
+       [dbo].[FK_DimDate_ShippedDate] (Clave externa)
+     Crear
+       [dbo].[FK_DimCustomer] (Clave externa)
+       [dbo].[FK_DimProduct] (Clave externa)
+       [dbo].[FK_DimEmployee] (Clave externa)
+       [dbo].[FK_DimDate_OrderDate] (Clave externa)
+       [dbo].[FK_DimDate_RequiredDate] (Clave externa)
+       [dbo].[FK_DimDate_ShippedDate] (Clave externa)
+     Actualizar
+       [dbo].[DW_MergeFactOrders] (Procedimiento)
+
+Las bases de datos del proyecto y de destino tienen una configuración de intercalación diferente. Se pueden producir errores de implementación.
+

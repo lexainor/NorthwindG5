@@ -1,0 +1,26 @@
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindOLTP\bin\Debug\NorthwindOLTP.dacpac
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindOLTP\bin\Debug\NorthwindOLTP.dll
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindOLTP\bin\Debug\NorthwindOLTP.pdb
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindOLTP\obj\Debug\NorthwindOLTP.sqlproj.AssemblyReference.cache
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindOLTP\obj\Debug\NorthwindOLTP.dll
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindOLTP\obj\Debug\NorthwindOLTP.pdb
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindOLTP\obj\Debug\Model.xml
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindOLTP\obj\Debug\refactor.xml
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindOLTP\obj\Debug\postdeploy.sql
+C:\Users\Axel Torrico\source\repos\NorthwindBI\NorthwindDW\NorthwindOLTP\obj\Debug\predeploy.sql
+C:\Nothwind\NorthwindDW\NorthwindOLTP\bin\Debug\NorthwindOLTP.dacpac
+C:\Nothwind\NorthwindDW\NorthwindOLTP\bin\Debug\NorthwindOLTP.dll
+C:\Nothwind\NorthwindDW\NorthwindOLTP\bin\Debug\NorthwindOLTP.pdb
+C:\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\NorthwindOLTP.sqlproj.AssemblyReference.cache
+C:\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\NorthwindOLTP.dll
+C:\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\NorthwindOLTP.pdb
+C:\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\Model.xml
+C:\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\refactor.xml
+C:\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\postdeploy.sql
+C:\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\predeploy.sql
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindOLTP\bin\Debug\NorthwindOLTP.dacpac
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindOLTP\bin\Debug\NorthwindOLTP.dll
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindOLTP\bin\Debug\NorthwindOLTP.pdb
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\NorthwindOLTP.sqlproj.AssemblyReference.cache
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\NorthwindOLTP.dll
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\NorthwindOLTP.pdb

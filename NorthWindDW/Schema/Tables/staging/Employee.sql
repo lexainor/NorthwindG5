@@ -1,4 +1,4 @@
-﻿CREATE TABLE [staging].[Employees]
+﻿CREATE TABLE [staging].[Employee]
 (
 	[EmployeeSK] [int] NOT NULL,
 	[LastName] [nvarchar](20) NOT NULL,
@@ -11,12 +11,12 @@
 	[City] [nvarchar](15) NOT NULL,
 	[Region] [nvarchar](15) NULL,
 	[PostalCode] [nvarchar](10) NULL,
-	[Country] [nvarchar](10) NOT NULL,
+	[Country] [nvarchar](15) NOT NULL,
 	[HomePhone] [nvarchar](24),
 	[Extension] [nvarchar](4),
 	[Photo] [image],
 	[Notes] [ntext],
-	[ReportsTo] [int] NOT NULL,
+	[ReportsTo] [int] NULL,
 	[PhotoPath] [nvarchar](255),
 	[TerritoryDescription] [nchar](50) NOT NULL,
 	[RegionDescription] [nchar](50) NOT NULL

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>NorthwindOLTP</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{2c78b7a5-44bd-4644-9039-9db67947b545}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>NorthwindOLTP</RootNamespace>
+    <AssemblyName>NorthwindOLTP</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Schema" />
+    <Folder Include="Scripts" />
+    <Folder Include="Schema\Programmability" />
+    <Folder Include="Schema\Security" />
+    <Folder Include="Schema\Programmability\Store Procedures" />
+    <Folder Include="Schema\Tables" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Schema\Programmability\Store Procedures\GetDatabaseRowVersion.sql" />
+    <Build Include="Schema\Programmability\Store Procedures\GetCustomerChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Store Procedures\GetEmployeeChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Store Procedures\GetProductChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Store Procedures\GetOrdersChangesByRowVersion.sql" />
+    <Build Include="Schema\Tables\Categories.sql" />
+    <Build Include="Schema\Tables\CustomerCustomerDemo.sql" />
+    <Build Include="Schema\Tables\CustomerDemographics.sql" />
+    <Build Include="Schema\Tables\Customers.sql" />
+    <Build Include="Schema\Tables\Employees.sql" />
+    <Build Include="Schema\Tables\EmployeeTerritories.sql" />
+    <Build Include="Schema\Tables\Order Details.sql" />
+    <Build Include="Schema\Tables\Orders.sql" />
+    <Build Include="Schema\Tables\Products.sql" />
+    <Build Include="Schema\Tables\Region.sql" />
+    <Build Include="Schema\Tables\Shippers.sql" />
+    <Build Include="Schema\Tables\Suppliers.sql" />
+    <Build Include="Schema\Tables\Territories.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\Categories.data.sql" />
+    <None Include="Scripts\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\Customers.data.sql" />
+    <None Include="Scripts\Employees.data.sql" />
+    <None Include="Scripts\OrderDetails.data.sql" />
+    <None Include="Scripts\Orders.data.sql" />
+    <None Include="Scripts\Products.data.sql" />
+    <None Include="Scripts\Shippers.data.sql" />
+    <None Include="Scripts\Suppliers.data.sql" />
+    <None Include="Scripts\Region.data.sql" />
+    <None Include="Scripts\Territories.data.sql" />
+    <None Include="Scripts\EmployeeTerritories.data.sql" />
+    <None Include="Scripts\clean.data.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="Scripts\Script.PreDeployment.sql" />
+  </ItemGroup>
+</Project>

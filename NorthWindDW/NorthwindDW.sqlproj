@@ -64,6 +64,7 @@
     <Folder Include="Schema\Tables\staging" />
     <Folder Include="Schema\Security\schemas" />
     <Folder Include="Scripts" />
+    <Folder Include="Schema\Programmability\Store Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Security\schemas\staging.sql" />
@@ -77,6 +78,12 @@
     <Build Include="Schema\Tables\staging\Orders.sql" />
     <Build Include="Schema\Tables\dbo\DimDate.sql" />
     <Build Include="Schema\Tables\dbo\PackageConfig.sql" />
+    <Build Include="Schema\Programmability\Store Procedures\GetLastPackageRowVersion.sql" />
+    <Build Include="Schema\Programmability\Store Procedures\UpdateLastPackageRowVersion.sql" />
+    <Build Include="Schema\Programmability\Store Procedures\DW_MergeDimCustomer.sql" />
+    <Build Include="Schema\Programmability\Store Procedures\DW_MergeDimEmployee.sql" />
+    <Build Include="Schema\Programmability\Store Procedures\DW_MergeDimProduct.sql" />
+    <Build Include="Schema\Programmability\Store Procedures\DW_MergeFactOrders.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\DimDate.Data.sql" />

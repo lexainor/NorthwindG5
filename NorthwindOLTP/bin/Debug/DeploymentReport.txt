@@ -1,0 +1,32 @@
+﻿** Aspectos destacados
+     Tablas que se volverán a crear con los datos migrados
+       Ninguno
+     Índices clúster que se van a quitar
+       Ninguno
+     Índices clúster que se van a crear
+       Ninguno
+     Posibles incidencias de datos
+       Ninguno
+
+** Acciones del usuario
+     Quitar
+       [dbo].[FK_CustomerCustomerDemo] (Clave externa)
+       [dbo].[FK_CustomerCustomerDemo_Customers] (Clave externa)
+       [dbo].[FK_EmployeeTerritories_Employees] (Clave externa)
+       [dbo].[FK_EmployeeTerritories_Territories] (Clave externa)
+       [dbo].[FK_Territories_Region] (Clave externa)
+       [dbo].[PK_CustomerCustomerDemo] (Clave principal)
+       [dbo].[PK_CustomerDemographics] (Clave principal)
+       [dbo].[PK_EmployeeTerritories] (Clave principal)
+       [dbo].[PK_Region] (Clave principal)
+       [dbo].[PK_Territories] (Clave principal)
+     Crear
+       [dbo].[GetCustomerChangesByRowVersion] (Procedimiento)
+       [dbo].[GetEmployeeChangesByRowVersion] (Procedimiento)
+       [dbo].[GetOrdersChangesByRowVersion] (Procedimiento)
+       [dbo].[GetProductChangesByRowVersion] (Procedimiento)
+
+** Acciones de compatibilidad
+
+Las bases de datos del proyecto y de destino tienen una configuración de intercalación diferente. Se pueden producir errores de implementación.
+
