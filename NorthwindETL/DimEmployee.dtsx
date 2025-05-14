@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="DimEmployee"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{84A24A4A-0D81-485E-B7B6-1D477BEC8087}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{BCFDE9E5-A353-4CA3-9B66-1A43862C742C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -535,7 +535,7 @@ where [refTable].[EmployeeID] = ?</property>
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Employee\Get Employee.Outputs[Salida de origen de OLE DB].ExternalColumns[TerritoryDescription]"
-                      length="50"
+                      length="4000"
                       lineageId="Package\Load Employee\Get Employee.Outputs[Salida de origen de OLE DB].Columns[TerritoryDescription]"
                       name="TerritoryDescription"
                       truncationRowDisposition="FailComponent" />
@@ -545,7 +545,7 @@ where [refTable].[EmployeeID] = ?</property>
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load Employee\Get Employee.Outputs[Salida de origen de OLE DB].ExternalColumns[RegionDescription]"
-                      length="50"
+                      length="4000"
                       lineageId="Package\Load Employee\Get Employee.Outputs[Salida de origen de OLE DB].Columns[RegionDescription]"
                       name="RegionDescription"
                       truncationRowDisposition="FailComponent" />
@@ -639,12 +639,12 @@ where [refTable].[EmployeeID] = ?</property>
                     <externalMetadataColumn
                       refId="Package\Load Employee\Get Employee.Outputs[Salida de origen de OLE DB].ExternalColumns[TerritoryDescription]"
                       dataType="wstr"
-                      length="50"
+                      length="4000"
                       name="TerritoryDescription" />
                     <externalMetadataColumn
                       refId="Package\Load Employee\Get Employee.Outputs[Salida de origen de OLE DB].ExternalColumns[RegionDescription]"
                       dataType="wstr"
-                      length="50"
+                      length="4000"
                       name="RegionDescription" />
                   </externalMetadataColumns>
                 </output>
@@ -758,13 +758,13 @@ where [refTable].[EmployeeID] = ?</property>
                     <outputColumn
                       refId="Package\Load Employee\Get Employee.Outputs[Salida de error de origen de OLE DB].Columns[TerritoryDescription]"
                       dataType="wstr"
-                      length="50"
+                      length="4000"
                       lineageId="Package\Load Employee\Get Employee.Outputs[Salida de error de origen de OLE DB].Columns[TerritoryDescription]"
                       name="TerritoryDescription" />
                     <outputColumn
                       refId="Package\Load Employee\Get Employee.Outputs[Salida de error de origen de OLE DB].Columns[RegionDescription]"
                       dataType="wstr"
-                      length="50"
+                      length="4000"
                       lineageId="Package\Load Employee\Get Employee.Outputs[Salida de error de origen de OLE DB].Columns[RegionDescription]"
                       name="RegionDescription" />
                     <outputColumn
@@ -979,14 +979,14 @@ where [refTable].[EmployeeID] = ?</property>
                     <inputColumn
                       refId="Package\Load Employee\Load Employee.Inputs[Entrada de destino de OLE DB].Columns[TerritoryDescription]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="4000"
                       cachedName="TerritoryDescription"
                       externalMetadataColumnId="Package\Load Employee\Load Employee.Inputs[Entrada de destino de OLE DB].ExternalColumns[TerritoryDescription]"
                       lineageId="Package\Load Employee\Get Employee.Outputs[Salida de origen de OLE DB].Columns[TerritoryDescription]" />
                     <inputColumn
                       refId="Package\Load Employee\Load Employee.Inputs[Entrada de destino de OLE DB].Columns[RegionDescription]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="4000"
                       cachedName="RegionDescription"
                       externalMetadataColumnId="Package\Load Employee\Load Employee.Inputs[Entrada de destino de OLE DB].ExternalColumns[RegionDescription]"
                       lineageId="Package\Load Employee\Get Employee.Outputs[Salida de origen de OLE DB].Columns[RegionDescription]" />
@@ -1084,12 +1084,12 @@ where [refTable].[EmployeeID] = ?</property>
                     <externalMetadataColumn
                       refId="Package\Load Employee\Load Employee.Inputs[Entrada de destino de OLE DB].ExternalColumns[TerritoryDescription]"
                       dataType="wstr"
-                      length="50"
+                      length="4000"
                       name="TerritoryDescription" />
                     <externalMetadataColumn
                       refId="Package\Load Employee\Load Employee.Inputs[Entrada de destino de OLE DB].ExternalColumns[RegionDescription]"
                       dataType="wstr"
-                      length="50"
+                      length="4000"
                       name="RegionDescription" />
                   </externalMetadataColumns>
                 </input>
@@ -1229,14 +1229,14 @@ where [refTable].[EmployeeID] = ?</property>
                     <inputColumn
                       refId="Package\Load Employee\Load staging.Inputs[Entrada de destino de OLE DB].Columns[RegionDescription]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="4000"
                       cachedName="RegionDescription"
                       externalMetadataColumnId="Package\Load Employee\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[RegionDescription]"
                       lineageId="Package\Load Employee\Get Employee.Outputs[Salida de origen de OLE DB].Columns[RegionDescription]" />
                     <inputColumn
                       refId="Package\Load Employee\Load staging.Inputs[Entrada de destino de OLE DB].Columns[TerritoryDescription]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="4000"
                       cachedName="TerritoryDescription"
                       externalMetadataColumnId="Package\Load Employee\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[TerritoryDescription]"
                       lineageId="Package\Load Employee\Get Employee.Outputs[Salida de origen de OLE DB].Columns[TerritoryDescription]" />
@@ -1415,12 +1415,12 @@ where [refTable].[EmployeeID] = ?</property>
                     <externalMetadataColumn
                       refId="Package\Load Employee\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[TerritoryDescription]"
                       dataType="wstr"
-                      length="50"
+                      length="4000"
                       name="TerritoryDescription" />
                     <externalMetadataColumn
                       refId="Package\Load Employee\Load staging.Inputs[Entrada de destino de OLE DB].ExternalColumns[RegionDescription]"
                       dataType="wstr"
-                      length="50"
+                      length="4000"
                       name="RegionDescription" />
                   </externalMetadataColumns>
                 </input>
@@ -1714,13 +1714,13 @@ where [refTable].[EmployeeID] = ?</property>
           Id="Package\Load Employee\Get Employee"
           TopLeft="417,44" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\Load Employee\Load Employee"
-          TopLeft="677,275" />
-        <NodeLayout
           Size="142,42"
           Id="Package\Load Employee\Load staging"
           TopLeft="144,260" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Load Employee\Load Employee"
+          TopLeft="677,275" />
         <NodeLayout
           Size="129,42"
           Id="Package\Load Employee\Búsqueda"
@@ -1831,7 +1831,7 @@ where [refTable].[EmployeeID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Employee\Load Employee">
+    design-time-name="Package\Load Employee\Load staging">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1844,7 +1844,7 @@ where [refTable].[EmployeeID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Employee\Load staging">
+    design-time-name="Package\Load Employee\Load Employee">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

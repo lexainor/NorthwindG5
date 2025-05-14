@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="NorthwindOLTP.dll" />
-			<Metadata Name="FileName" Value="C:\NOTHWIND\NORTHWINDDW\NORTHWINDOLTP\OBJ\DEBUG\NORTHWINDOLTP.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\AXEL TORRICO\SOURCE\REPOS\NORTHWINDBI\NOTHWIND\NORTHWINDDW\NORTHWINDOLTP\OBJ\DEBUG\NORTHWINDOLTP.DLL" />
 			<Metadata Name="AssemblyName" Value="NorthwindOLTP" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\NorthwindOLTP.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\NorthwindOLTP.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>
@@ -1735,53 +1735,73 @@ END]]></Value>
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 BEGIN
-	SELECT emp.[EmployeeID]
-          ,emp.[LastName]
-          ,emp.[FirstName]
-          ,emp.[Title]
-          ,emp.[TitleOfCourtesy]
-          ,emp.[BirthDate]
-          ,emp.[HireDate]
-          ,emp.[Address]
-          ,emp.[City]
-          ,emp.[Region]
-          ,emp.[PostalCode]
-          ,emp.[Country]
-          ,emp.[HomePhone]
-          ,emp.[Extension]
-          ,emp.[Photo]
-          ,emp.[Notes]
-          ,emp.[ReportsTo]
-          ,emp.[PhotoPath]
-          ,ter.[TerritoryDescription]
-          ,reg.[RegionDescription]
-	  FROM [Employees]                           emp
-      INNER JOIN [EmployeeTerritories]           emt ON emp.[EmployeeID] = emt.[EmployeeID]
-      INNER JOIN [Territories]                   ter ON emt.[TerritoryID] = ter.[TerritoryID]
-      INNER JOIN [Region]                        reg ON ter.[RegionID] = reg.[RegionID]
-	  WHERE (emp.[rowversion] > CONVERT(ROWVERSION,@startRow) 
-	  AND emp.[rowversion] <= CONVERT(ROWVERSION,@endRow))
-      OR (emt.[rowversion] > CONVERT(ROWVERSION,@startRow) 
-	  AND emt.[rowversion] <= CONVERT(ROWVERSION,@endRow))
-      OR (ter.[rowversion] > CONVERT(ROWVERSION,@startRow) 
-	  AND ter.[rowversion] <= CONVERT(ROWVERSION,@endRow))
-      OR (reg.[rowversion] > CONVERT(ROWVERSION,@startRow) 
-	  AND reg.[rowversion] <= CONVERT(ROWVERSION,@endRow))
+    WITH ChangedRelatedData AS (
+        SELECT DISTINCT
+            emt.EmployeeID,
+            LTRIM(RTRIM(ter.TerritoryDescription)) AS TerritoryDescription,
+            LTRIM(RTRIM(reg.RegionDescription)) AS RegionDescription
+        FROM [EmployeeTerritories] emt
+        LEFT JOIN [Territories] ter ON emt.TerritoryID = ter.TerritoryID
+        LEFT JOIN [Region] reg ON ter.RegionID = reg.RegionID
+        WHERE (emt.[rowversion] > CONVERT(ROWVERSION, @startRow)
+               AND emt.[rowversion] <= CONVERT(ROWVERSION, @endRow))
+            OR (ter.[rowversion] > CONVERT(ROWVERSION, @startRow)
+               AND ter.[rowversion] <= CONVERT(ROWVERSION, @endRow))
+            OR (reg.[rowversion] > CONVERT(ROWVERSION, @startRow)
+               AND reg.[rowversion] <= CONVERT(ROWVERSION, @endRow))
+    ),
+    DistinctEmployeeRegions AS (
+        SELECT DISTINCT
+            EmployeeID,
+            RegionDescription
+        FROM ChangedRelatedData
+    ),
+    AggregatedTerritories AS (
+        SELECT
+            EmployeeID,
+            STRING_AGG(TerritoryDescription, ', ') AS TerritoryDescription
+        FROM ChangedRelatedData
+        GROUP BY EmployeeID
+    ),
+    AggregatedRegions AS (
+        SELECT
+            EmployeeID,
+            STRING_AGG(RegionDescription, ', ') AS RegionDescription
+        FROM DistinctEmployeeRegions
+        GROUP BY EmployeeID
+    )
+    SELECT
+        emp.[EmployeeID],
+        emp.[LastName],
+        emp.[FirstName],
+        emp.[Title],
+        emp.[TitleOfCourtesy],
+        emp.[BirthDate],
+        emp.[HireDate],
+        emp.[Address],
+        emp.[City],
+        emp.[Region], 
+        emp.[PostalCode],
+        emp.[Country],
+        emp.[HomePhone],
+        emp.[Extension],
+        emp.[Photo],
+        emp.[Notes],
+        emp.[ReportsTo],
+        emp.[PhotoPath],
+        at.TerritoryDescription,
+        ar.RegionDescription 
+    FROM [Employees] emp
+    LEFT JOIN AggregatedTerritories at ON emp.EmployeeID = at.EmployeeID
+    LEFT JOIN AggregatedRegions ar ON emp.EmployeeID = ar.EmployeeID
+    WHERE emp.[rowversion] > CONVERT(ROWVERSION, @startRow)
+      AND emp.[rowversion] <= CONVERT(ROWVERSION, @endRow);
 END]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
 				<Entry>
-					<References Name="[dbo].[Employees]" />
-				</Entry>
-				<Entry>
 					<References Name="[dbo].[EmployeeTerritories]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Employees].[EmployeeID]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[EmployeeTerritories].[EmployeeID]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Territories]" />
@@ -1802,7 +1822,61 @@ END]]></Value>
 					<References Name="[dbo].[Region].[RegionID]" />
 				</Entry>
 				<Entry>
+					<References Name="[dbo].[EmployeeTerritories].[EmployeeID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Territories].[TerritoryDescription]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Region].[RegionDescription]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EmployeeTerritories].[rowversion]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[rowversion]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetEmployeeChangesByRowVersion].[@startRow]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[rowversion]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[GetEmployeeChangesByRowVersion].[@endRow]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Territories].[rowversion]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[rowversion]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[rowversion]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Region].[rowversion]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[rowversion]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[rowversion]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EmployeeTerritories].[EmployeeID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Employees]" />
+				</Entry>
+				<Entry>
 					<References Name="[dbo].[Employees].[EmployeeID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EmployeeTerritories].[EmployeeID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[EmployeeTerritories].[EmployeeID]" />
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[Employees].[LastName]" />
@@ -1856,52 +1930,90 @@ END]]></Value>
 					<References Name="[dbo].[Employees].[PhotoPath]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[Territories].[TerritoryDescription]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Region].[RegionDescription]" />
-				</Entry>
-				<Entry>
 					<References Name="[dbo].[Employees].[rowversion]" />
 				</Entry>
 				<Entry>
 					<References ExternalSource="BuiltIns" Name="[rowversion]" />
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[GetEmployeeChangesByRowVersion].[@startRow]" />
-				</Entry>
-				<Entry>
 					<References ExternalSource="BuiltIns" Name="[rowversion]" />
 				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
 				<Entry>
-					<References Name="[dbo].[GetEmployeeChangesByRowVersion].[@endRow]" />
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[GetEmployeeChangesByRowVersion].[CTE1].[ChangedRelatedData]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[GetEmployeeChangesByRowVersion].[CTE1].[ChangedRelatedData].[EmployeeID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[EmployeeTerritories].[EmployeeID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[GetEmployeeChangesByRowVersion].[CTE1].[ChangedRelatedData].[TerritoryDescription]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[GetEmployeeChangesByRowVersion].[CTE1].[ChangedRelatedData].[RegionDescription]" />
+							</Entry>
+						</Relationship>
+					</Element>
 				</Entry>
 				<Entry>
-					<References Name="[dbo].[EmployeeTerritories].[rowversion]" />
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[GetEmployeeChangesByRowVersion].[CTE1].[DistinctEmployeeRegions]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[GetEmployeeChangesByRowVersion].[CTE1].[DistinctEmployeeRegions].[EmployeeID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[EmployeeTerritories].[EmployeeID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[GetEmployeeChangesByRowVersion].[CTE1].[DistinctEmployeeRegions].[RegionDescription]" />
+							</Entry>
+						</Relationship>
+					</Element>
 				</Entry>
 				<Entry>
-					<References ExternalSource="BuiltIns" Name="[rowversion]" />
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[GetEmployeeChangesByRowVersion].[CTE1].[AggregatedTerritories]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[GetEmployeeChangesByRowVersion].[CTE1].[AggregatedTerritories].[EmployeeID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[EmployeeTerritories].[EmployeeID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[GetEmployeeChangesByRowVersion].[CTE1].[AggregatedTerritories].[TerritoryDescription]" />
+							</Entry>
+						</Relationship>
+					</Element>
 				</Entry>
 				<Entry>
-					<References ExternalSource="BuiltIns" Name="[rowversion]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Territories].[rowversion]" />
-				</Entry>
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[rowversion]" />
-				</Entry>
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[rowversion]" />
-				</Entry>
-				<Entry>
-					<References Name="[dbo].[Region].[rowversion]" />
-				</Entry>
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[rowversion]" />
-				</Entry>
-				<Entry>
-					<References ExternalSource="BuiltIns" Name="[rowversion]" />
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[GetEmployeeChangesByRowVersion].[CTE1].[AggregatedRegions]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[GetEmployeeChangesByRowVersion].[CTE1].[AggregatedRegions].[EmployeeID]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[EmployeeTerritories].[EmployeeID]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[GetEmployeeChangesByRowVersion].[CTE1].[AggregatedRegions].[RegionDescription]" />
+							</Entry>
+						</Relationship>
+					</Element>
 				</Entry>
 			</Relationship>
 			<Relationship Name="Parameters">
@@ -1942,10 +2054,10 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1478" />
+				<Property Name="Length" Value="2358" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
-				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetEmployeeChangesByRowVersion]&#xD;&#xA;(&#xD;&#xA;  @startRow BIGINT &#xD;&#xA;   ,@endRow  BIGINT &#xD;&#xA;)&#xD;&#xA;AS" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[GetEmployeeChangesByRowVersion]&#xD;&#xA;(&#xD;&#xA;    @startRow BIGINT,&#xD;&#xA;    @endRow BIGINT&#xD;&#xA;)&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
 		<Element Type="SqlProcedure" Name="[dbo].[GetOrdersChangesByRowVersion]">

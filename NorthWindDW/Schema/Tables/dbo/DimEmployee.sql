@@ -19,6 +19,6 @@
 	[Notes] [ntext],
 	[ReportsTo] [int] NULL,
 	[PhotoPath] [nvarchar](255),
-	[TerritoryDescription] [nchar](50) NOT NULL,
-	[RegionDescription] [nchar](50) NOT NULL
+	[TerritoryDescription] [nvarchar](4000) NOT NULL,
+	[RegionDescription] [nvarchar](4000) NOT NULL
 )

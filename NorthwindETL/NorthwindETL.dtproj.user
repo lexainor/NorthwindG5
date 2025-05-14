@@ -8,6 +8,8 @@
         <UseWinAuth>false</UseWinAuth>
         <WinAuthUserName />
         <WinAuthDomain />
+        <ServerName />
+        <PathOnServer />
         <StartObjectID>FactOrders.dtsx</StartObjectID>
         <UserIDs />
         <UserPasswords />

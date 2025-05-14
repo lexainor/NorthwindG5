@@ -24,3 +24,7 @@ C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindOLT
 C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\NorthwindOLTP.sqlproj.AssemblyReference.cache
 C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\NorthwindOLTP.dll
 C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\NorthwindOLTP.pdb
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\Model.xml
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\refactor.xml
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\postdeploy.sql
+C:\Users\Axel Torrico\source\repos\NorthwindBI\Nothwind\NorthwindDW\NorthwindOLTP\obj\Debug\predeploy.sql
